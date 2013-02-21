@@ -31,7 +31,7 @@ this feature, you need pomegranate on your classpath. You can add this in your
 ### Disclaimers:
 
 * The method used to get the latest version from clojars is supremely hacky and
-liable to break. Hopefully either someone can point me to, or create and API
+liable to break. Hopefully either someone can point me to, or create an API
 to query this information more sensibly.
 
 * Currently only works on clojars, not for things on maven central or in your own
