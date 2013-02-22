@@ -6,6 +6,8 @@ pomegranate to load the dependency directly into your running nrepl.
 
 ### Installation:
 
+Requires *curl*, install with your package manager.
+
 #### EITHER:
 
 Copy/include the contents of init.el into your init.el
