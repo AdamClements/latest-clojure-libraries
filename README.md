@@ -37,12 +37,14 @@ or if you'd rather keep it in your dotfiles:
 M-x insert-clojars
 
 It will then ask you for "Library name:" (e.g. incanter), and whether you want to
-attempt to add it to the classpath of your current repl. If you want to make use of
-this feature, you need pomegranate on your classpath. You can add this in your
-.lein/profiles.clj and it will be available everywhere (leiningen 2).
+attempt to add it to the classpath of your currently running repl. It will then insert
+theh dependency vector with the latest version number at your current cursor position.
+
+To make use of the feature which injects the library into the current repl, you need 
+pomegranate on your classpath. You can add this in your .lein/profiles.clj and it will 
+be available everywhere (leiningen 2).
 
     {:user {:dependencies [[com.cemerick/pomegranate "0.0.13"]]}}
-
 
 ### Disclaimers:
 
