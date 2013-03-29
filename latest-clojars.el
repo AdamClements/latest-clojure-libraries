@@ -7,7 +7,6 @@
 ;; URL:     http://github.com/AdamClements/latest-clojure-libraries/
 ;; Version: 0.1
 ;; License: Eclipse Public License
-;; Package-Requires: ((nrepl "0.1.7"))
 
 (defun version-number (s)
   (when (string-match "[0-9]+\\.[0-9]+\\.[0-9]+"s)
@@ -31,6 +30,7 @@
            "  :repositories {\"clojars\" \"http://clojars.org/repo\"})")
    (lambda (out) (message (print out)))))
 
+;;;###autoload
 (defun insert-clojars (package inject?)
   (interactive (list (read-string "Library name: ")
                      (y-or-n-p "Add to running nrepl's classpath?")))
