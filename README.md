@@ -9,8 +9,28 @@ pomegranate to load the dependency directly into your running nrepl.
 Requires *curl* to be installed on your system and accessible on your
 $PATH, install with your package manager.
 
-Installation is through the Marmalade respository M-x package install
-then type "latest-clojars"
+If you're not already using Marmalade, add this to your
+`~/.emacs.d/init.el` and load it with <kbd>M-x eval-buffer</kbd>.
+
+```lisp
+(require 'package)
+(add-to-list 'package-archives
+             '("marmalade" . "http://marmalade-repo.org/packages/"))
+(package-initialize)
+```
+And then you can install:
+
+<kbd>M-x package-refresh-contents</kbd>
+
+<kbd>M-x package-install [RET] latest-clojars [RET]</kbd>
+
+or if you'd rather keep it in your dotfiles:
+
+```lisp
+(unless (package-installed-p 'latest-clojars)
+  (package-refresh-contents)
+  (package-install 'latest-clojars))
+```
 
 ### Usage:
 
