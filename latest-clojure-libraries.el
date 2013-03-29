@@ -5,7 +5,7 @@
 ;; Plugin:  Latest clojure version
 ;; Author:  Adam Clements <adam.clements@gmail.com>
 ;; URL:     http://github.com/AdamClements/latest-clojure-libraries/
-;; Version: 1.0.0
+;; Version: 0.1
 ;; License: Eclipse Public License
 ;; Package-Requires: ((nrepl "0.1.7"))
 
