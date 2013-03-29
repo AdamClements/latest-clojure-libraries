@@ -1,6 +1,13 @@
+;; latest-clojure-libraries.el --- Clojure dependency resolver
+
+;; Copyright 2013 Adam Clements
+
 ;; Plugin:  Latest clojure version
-;; Author:  Adam Clements (2013)
+;; Author:  Adam Clements <adam.clements@gmail.com>
+;; URL:     http://github.com/AdamClements/latest-clojure-libraries/
+;; Version: 1.0.0
 ;; License: Eclipse Public License
+;; Package-Requires: ((nrepl "0.1.7"))
 
 (defun version-number (s)
   (when (string-match "[0-9]+\\.[0-9]+\\.[0-9]+"s)
@@ -34,3 +41,5 @@
           (if inject? (add-clojure-dependency spec)))
       (message (concat "Can't find " package ", "
                        "are you sure you have the correct spelling? Is it definitely available on clojars?")))))
+
+;; latest-clojure-libraries.el ends here
