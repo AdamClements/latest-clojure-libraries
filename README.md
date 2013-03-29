@@ -9,8 +9,7 @@ pomegranate to load the dependency directly into your running nrepl.
 Requires *curl* to be installed on your system and accessible on your
 $PATH, install with your package manager.
 
-Installation is through the Marmalade respository M-x package install
-then type "latest-clojars"
+Installation is through the Marmalade respository M-x package-install "latest-clojars"
 
 ### Usage:
 
