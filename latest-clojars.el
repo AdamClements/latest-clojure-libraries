@@ -42,4 +42,4 @@
       (message (concat "Can't find " package ", "
                        "are you sure you have the correct spelling? Is it definitely available on clojars?")))))
 
-;;; latest-clojure-libraries.el ends here
+;;; latest-clojars.el ends here
