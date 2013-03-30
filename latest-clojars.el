@@ -5,12 +5,12 @@
 ;; Plugin:  Latest clojars dependency resolver
 ;; Author:  Adam Clements <adam.clements@gmail.com>
 ;; URL:     http://github.com/AdamClements/latest-clojure-libraries/
-;; Version: 0.1
+;; Version: 0.2
 ;; License: Eclipse Public License
 
 (defun version-number (s)
-  (when (string-match "[0-9]+\\.[0-9]+\\.[0-9]+"s)
-  (match-string 0 s)))
+  (when (string-match "\"\\([0-9]+\\.[0-9]+\\.[0-9]+\\)\"" s)
+    (match-string 1 s)))
 
 (defun get-latest-clojure-library (package)
   (let ((version (version-number
@@ -40,6 +40,6 @@
           (insert spec)
           (if inject? (add-clojure-dependency spec)))
       (message (concat "Can't find " package ", "
-                       "are you sure you have the correct spelling? Is it definitely available on clojars?")))))
+                       "are you sure you have the correct spelling? Is it definitely available on clojars and not a SNAPSHOT?")))))
 
 ;;; latest-clojars.el ends here
