@@ -9,8 +9,13 @@ pomegranate to load the dependency directly into your running nrepl.
 Requires *curl* to be installed on your system and accessible on your
 $PATH, install with your package manager.
 
+`latest-clojars` is available on both major `package.el` community
+maintained repos -
+[Marmalade](http://marmalade-repo.org/packages/nrepl) and
+[MELPA](http://melpa.milkbox.net).
+
 If you're not already using Marmalade, add this to your
-`~/.emacs.d/init.el` and load it with <kbd>M-x eval-buffer</kbd>.
+`~/.emacs.d/init.el` (or equivalent) and load it with <kbd>M-x eval-buffer</kbd>.
 
 ```lisp
 (require 'package)
@@ -18,13 +23,21 @@ If you're not already using Marmalade, add this to your
              '("marmalade" . "http://marmalade-repo.org/packages/"))
 (package-initialize)
 ```
-And then you can install:
 
-<kbd>M-x package-refresh-contents</kbd>
+For MELPA the code you need to add is:
+
+```lisp
+(require 'package)
+(add-to-list 'package-archives
+             '("melpa" . "http://melpa.milkbox.net/packages/") t)
+(package-initialize)
+```
+
+And then you can install `latest-clojars` with the following command:
 
 <kbd>M-x package-install [RET] latest-clojars [RET]</kbd>
 
-or if you'd rather keep it in your dotfiles:
+or by adding this bit of Emacs Lisp code to your Emacs initialization file(`.emacs` or `init.el`):
 
 ```lisp
 (unless (package-installed-p 'latest-clojars)
@@ -40,8 +53,8 @@ It will then ask you for "Library name:" (e.g. incanter), and whether you want t
 attempt to add it to the classpath of your currently running repl. It will then insert
 theh dependency vector with the latest version number at your current cursor position.
 
-To make use of the feature which injects the library into the current repl, you need 
-pomegranate on your classpath. You can add this in your .lein/profiles.clj and it will 
+To make use of the feature which injects the library into the current repl, you need
+pomegranate on your classpath. You can add this in your .lein/profiles.clj and it will
 be available everywhere (leiningen 2).
 
     {:user {:dependencies [[com.cemerick/pomegranate "0.0.13"]]}}
