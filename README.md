@@ -33,8 +33,9 @@ For MELPA the code you need to add is:
 (package-initialize)
 ```
 
-And then you can install `latest-clojars` with the following command:
+And then you can install `latest-clojars` with the following commands:
 
+<kbd>M-x package-refresh-contents [RET]</kbd>
 <kbd>M-x package-install [RET] latest-clojars [RET]</kbd>
 
 or by adding this bit of Emacs Lisp code to your Emacs initialization file(`.emacs` or `init.el`):
