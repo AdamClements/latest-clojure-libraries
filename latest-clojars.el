@@ -9,7 +9,7 @@
 ;; License: Eclipse Public License
 
 (defun version-number (s)
-  (when (string-match "\"\\([0-9]+\\.[0-9]+\\.[0-9]+\\)\"" s)
+  (when (string-match ">\\([0-9]+\\.[0-9]+\\.[0-9]+\\)<" s)
     (match-string 1 s)))
 
 (defun get-latest-clojure-library (package)
