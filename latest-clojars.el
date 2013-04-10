@@ -5,7 +5,7 @@
 ;; Plugin:  Latest clojars dependency resolver
 ;; Author:  Adam Clements <adam.clements@gmail.com>
 ;; URL:     http://github.com/AdamClements/latest-clojure-libraries/
-;; Version: 0.2
+;; Version: 0.3
 ;; License: Eclipse Public License
 
 (defun version-number (s)
