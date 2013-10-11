@@ -8,7 +8,7 @@ your running nrepl.
 ### Installation:
 
 Requires *lein-ancient* to be in your .lein/profiles.clj :plugins vector
-and optionally *cemerick.pomegranate* to be in your :dev-dependencies
+and optionally *cemerick.pomegranate* to be in your :dependencies
 vector if you want the feature which automatically adds the library to
 your classpath without restarting the repl.
 
@@ -54,15 +54,18 @@ or by adding this bit of Emacs Lisp code to your Emacs initialization file(`.ema
 
 M-x insert-dependency
 
-It will then ask you for "Library name:" (e.g. incanter), and whether you want to
-attempt to add it to the classpath of your currently running repl. It will then insert
-theh dependency vector with the latest version number at your current cursor position.
+It will then ask you for "Library name:" (e.g. incanter), and whether
+you want to attempt to add it to the classpath of your currently running
+repl. It will then insert theh dependency vector with the latest version
+number at your current cursor position.
 
-To make use of the feature which injects the library into the current repl, you need
-pomegranate on your classpath. You can add this in your .lein/profiles.clj and it will
-be available everywhere (leiningen 2).
+To make use of the feature which injects the library into the current
+repl, you need pomegranate on your classpath. You can add this in your
+.lein/profiles.clj and it will be available everywhere (leiningen
+2). (note depending how you run your project this may not be visible and
+you may need to put it in your :user :dependencies)
 
-    {:user {:dependencies [[com.cemerick/pomegranate "0.2.0"]]}}
+    {:dev {:dependencies [[com.cemerick/pomegranate "0.2.0"]]}}
 
 ### Issues:
 
