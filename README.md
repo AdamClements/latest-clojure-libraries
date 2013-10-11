@@ -52,7 +52,8 @@ or by adding this bit of Emacs Lisp code to your Emacs initialization file(`.ema
 
 ### Usage:
 
-M-x insert-dependency
+<kbd>M-x latest-clojure-libraries-insert-dependency</kbd>
+
 
 It will then ask you for "Library name:" (e.g. incanter), and whether
 you want to attempt to add it to the classpath of your currently running
