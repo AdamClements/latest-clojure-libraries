@@ -1,15 +1,18 @@
-## Latest clojars resolver for Emacs
+## Latest clojure libraries resolver for Emacs
 
-Looks up the latest version of clojure libraries on clojars and automatically
-populates the buffer with the appropriate dependency vector. Optionally uses
-pomegranate to load the dependency directly into your running nrepl.
+Looks up the latest version of clojure libraries on clojars/maven and
+automatically populates the buffer with the appropriate dependency
+vector. Optionally uses pomegranate to load the dependency directly into
+your running nrepl.
 
 ### Installation:
 
-Requires *curl* to be installed on your system and accessible on your
-$PATH, install with your package manager.
+Requires *lein-ancient* to be in your .lein/profiles.clj :plugins vector
+and optionally *cemerick.pomegranate* to be in your :dev-dependencies
+vector if you want the feature which automatically adds the library to
+your classpath without restarting the repl.
 
-`latest-clojars` is available on both major `package.el` community
+`latest-clojure-libraries` is available on both major `package.el` community
 maintained repos -
 [Marmalade](http://marmalade-repo.org/packages/nrepl) and
 [MELPA](http://melpa.milkbox.net).
@@ -33,23 +36,23 @@ For MELPA the code you need to add is:
 (package-initialize)
 ```
 
-And then you can install `latest-clojars` with the following commands:
+And then you can install `latest-clojure-libraries` with the following commands:
 
 <kbd>M-x package-refresh-contents [RET]</kbd>
 
-<kbd>M-x package-install [RET] latest-clojars [RET]</kbd>
+<kbd>M-x package-install [RET] latest-clojure-libraries [RET]</kbd>
 
 or by adding this bit of Emacs Lisp code to your Emacs initialization file(`.emacs` or `init.el`):
 
 ```lisp
-(unless (package-installed-p 'latest-clojars)
+(unless (package-installed-p 'latest-clojure-libraries)
   (package-refresh-contents)
-  (package-install 'latest-clojars))
+  (package-install 'latest-clojure-libraries))
 ```
 
 ### Usage:
 
-M-x insert-clojars
+M-x insert-dependency
 
 It will then ask you for "Library name:" (e.g. incanter), and whether you want to
 attempt to add it to the classpath of your currently running repl. It will then insert
@@ -59,15 +62,8 @@ To make use of the feature which injects the library into the current repl, you 
 pomegranate on your classpath. You can add this in your .lein/profiles.clj and it will
 be available everywhere (leiningen 2).
 
-    {:user {:dependencies [[com.cemerick/pomegranate "0.0.13"]]}}
+    {:user {:dependencies [[com.cemerick/pomegranate "0.2.0"]]}}
 
-### Disclaimers:
-
-* The method used to get the latest version from clojars is supremely hacky and
-liable to break. Hopefully either someone can point me to, or create an API
-to query this information more sensibly.
-
-* Currently only works on clojars, not for things on maven central or in your own
-repositories, sorry.
+### Issues:
 
 * Output from adding to the repl's classpath is currently a little ugly.
