@@ -14,7 +14,7 @@ your classpath without restarting the repl.
 
 `latest-clojure-libraries` is available on both major `package.el` community
 maintained repos -
-[Marmalade](http://marmalade-repo.org/packages/nrepl) and
+[Marmalade](http://marmalade-repo.org/packages/) and
 [MELPA](http://melpa.milkbox.net).
 
 If you're not already using Marmalade, add this to your
