@@ -7,10 +7,8 @@ your running nrepl.
 
 ### Installation:
 
-NOTE: The official lein-ancient doesn't work with this yet, pending a pull request.
-
-Requires you to lein install my fork of *lein-ancient* and for that to be in your .lein/profiles.clj 
-:plugins vector and optionally *cemerick.pomegranate* to be in your :dependencies
+Edit your .lein/profiles.clj :plugins vector to include [lein-ancient "0.5.1"]
+and optionally add [com.cemerick/pomegranate "0.2.0"] to your :dependencies
 vector if you want the feature which automatically adds the library to
 your classpath without restarting the repl.
 
