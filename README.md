@@ -7,8 +7,8 @@ your running nrepl.
 
 ### Installation:
 
-Edit your .lein/profiles.clj :plugins vector to include [lein-ancient "0.5.1"]
-and optionally add [com.cemerick/pomegranate "0.2.0"] to your :dependencies
+Edit your .lein/profiles.clj :plugins vector to include `[lein-ancient "0.5.1"]`
+and optionally add `[com.cemerick/pomegranate "0.2.0"]` to your :dependencies
 vector if you want the feature which automatically adds the library to
 your classpath without restarting the repl.
 
