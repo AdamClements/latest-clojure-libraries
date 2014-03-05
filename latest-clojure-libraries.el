@@ -57,7 +57,7 @@
         (progn (message (concat "Found " spec))
                (insert spec)
                (when inject (lcl/add-clojure-dependency spec)))
-      (error "Can't find %s, are you sure you have the correct spelling? Do you have leiningen and the lein-ancient plugin set up?" package))))
+      (error "Can't find %s. Check that you have the correct spelling and you have leiningen and the lein-ancient plugin set up." package))))
 
 (provide 'latest-clojure-libraries)
 ;;; latest-clojure-libraries.el ends here
