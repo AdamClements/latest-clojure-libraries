@@ -19,6 +19,8 @@
 
 ;;; Code:
 
+(require 'thingatpt)
+
 (setq lcl/nrepl-enabled? (condition-case nil
                              (require 'nrepl)
                            (error nil)))
@@ -58,6 +60,19 @@
                (insert spec)
                (when inject (lcl/add-clojure-dependency spec)))
       (error "Can't find %s. Check that you have the correct spelling and you have leiningen and the lein-ancient plugin set up." package))))
+
+;;;###autoload
+(defun latest-clojure-libraries-update-dependency-version ()
+  "Update dependency version number for package at point. Point
+must be at the name of the package, not the version number."
+  (interactive)
+  (let ((package-name (symbol-at-point)))
+    (if package-name
+        (save-excursion
+          (backward-up-list)
+          (latest-clojure-libraries-insert-dependency package-name nil)
+          (forward-list)
+          (kill-sexp)))))
 
 (provide 'latest-clojure-libraries)
 ;;; latest-clojure-libraries.el ends here
