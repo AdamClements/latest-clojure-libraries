@@ -62,15 +62,16 @@
       (error "Can't find %s. Check that you have the correct spelling and you have leiningen and the lein-ancient plugin set up." package))))
 
 ;;;###autoload
-(defun latest-clojure-libraries-update-dependency-version ()
+(defun latest-clojure-libraries-update-dependency-version (inject)
   "Update dependency version number for package at point. Point
 must be at the name of the package, not the version number."
-  (interactive)
+  (interactive (list (when (lcl/nrepl-available)
+                       (y-or-n-p "Add to running nrepl's classpath (requires cemerick.pomegranate)?"))))
   (let ((package-name (symbol-at-point)))
     (if package-name
         (save-excursion
           (backward-up-list)
-          (latest-clojure-libraries-insert-dependency package-name nil)
+          (latest-clojure-libraries-insert-dependency package-name inject)
           (kill-sexp)))))
 
 (provide 'latest-clojure-libraries)
