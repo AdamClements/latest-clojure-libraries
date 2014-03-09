@@ -71,7 +71,6 @@ must be at the name of the package, not the version number."
         (save-excursion
           (backward-up-list)
           (latest-clojure-libraries-insert-dependency package-name nil)
-          (forward-list)
           (kill-sexp)))))
 
 (provide 'latest-clojure-libraries)
