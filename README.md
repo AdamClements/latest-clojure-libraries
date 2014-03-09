@@ -52,6 +52,7 @@ or by adding this bit of Emacs Lisp code to your Emacs initialization file(`.ema
 
 ### Usage:
 
+#### Addding dependencies
 <kbd>M-x latest-clojure-libraries-insert-dependency</kbd>
 
 
@@ -67,6 +68,15 @@ repl, you need pomegranate on your classpath. You can add this in your
 you may need to put it in your :user :dependencies)
 
     {:dev {:dependencies [[com.cemerick/pomegranate "0.2.0"]]}}
+
+#### Updating versions on existing dependencies
+
+<kbd>M-x latest-clojure-libraries-update-dependency-version</kbd>
+
+With your cursor on the name of a dependency, such as anywhere on
+"org.clojure/clojure" in [org.clojure/clojure "1.4.0"], invoke this
+command to update the version number to the latest version.
+
 
 ### Issues:
 
