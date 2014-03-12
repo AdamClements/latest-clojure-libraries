@@ -5,7 +5,7 @@
 ;; Plugin:  Latest clojure libraries dependency resolver
 ;; Author:  Adam Clements <adam.clements@gmail.com>
 ;; URL:     http://github.com/AdamClements/latest-clojure-libraries/
-;; Version: 0.5
+;; Version: 0.6
 ;; License: Eclipse Public License
 
 ;;; Commentary:
@@ -13,7 +13,7 @@
 ;; Looks up the latest version of clojure libraries on clojars/maven
 ;; and automatically populates the buffer with the appropriate
 ;; dependency vector. Optionally uses pomegranate to load the
-;; dependency directly into your running nrepl.
+;; dependency directly into your running repl.
 
 ;; Then, use M-x latest-clojure-libraries-insert-dependency
 
@@ -21,9 +21,9 @@
 
 (require 'thingatpt)
 
-(setq lcl/nrepl-enabled? (condition-case nil
-                             (require 'nrepl)
-                           (error nil)))
+(setq lcl/nrepl-enabled? (or (require 'nrepl-client nil t)
+                             (require 'nrepl nil t)
+                             f))
 
 (defun lcl/get-version-vec (s)
   (when (string-match "[[].+? \".+?\"[]]" s)
