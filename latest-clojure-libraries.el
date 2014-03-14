@@ -45,10 +45,9 @@
      (lambda (out) (message (print out))))))
 
 (defun lcl/nrepl-available ()
-  (and lcl/nrepl-enabled? (or (and (fboundp 'cider-current-repl-buffer)
-                                   (cider-current-repl-buffer))
-                              (and (fboundp 'nrepl-current-repl-buffer)
-                                   (nrepl-current-repl-buffer)))))
+  (and lcl/nrepl-enabled?
+       (fboundp 'nrepl-connection-buffers)
+       (nrepl-connection-buffers)))
 
 ;;;###autoload
 (defun latest-clojure-libraries-insert-dependency (package inject)
