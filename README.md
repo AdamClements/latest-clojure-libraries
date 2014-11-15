@@ -52,13 +52,13 @@ or by adding this bit of Emacs Lisp code to your Emacs initialization file(`.ema
 
 ### Usage:
 
-#### Addding dependencies
+#### Adding dependencies
 <kbd>M-x latest-clojure-libraries-insert-dependency</kbd>
 
 
 It will then ask you for "Library name:" (e.g. incanter), and whether
 you want to attempt to add it to the classpath of your currently running
-repl. It will then insert theh dependency vector with the latest version
+repl. It will then insert the dependency vector with the latest version
 number at your current cursor position.
 
 To make use of the feature which injects the library into the current
