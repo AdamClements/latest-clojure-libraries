@@ -1,3 +1,5 @@
+***NOTE: This library's functionality has been totally superceded by clj-refactor's add-library-dependency functionality, I recommend you use that instead. ***
+
 ## Latest clojure libraries resolver for Emacs
 
 Looks up the latest version of clojure libraries on clojars/maven and
